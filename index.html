@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Developer Portfolio Dashboard</title>
+  <style>
+    :root {
+      --bg: #0f172a;
+      --card: #1e293b;
+      --accent: #38bdf8;
+      --text: #f8fafc;
+      --muted: #94a3b8;
+    }
+    body {
+      margin: 0;
+      font-family: system-ui, -apple-system, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      display: flex;
+      justify-content: center;
+      padding: 2rem;
+    }
+    .container {
+      max-width: 900px;
+      width: 100%;
+    }
+    header {
+      text-align: center;
+      padding: 2rem 0;
+    }
+    h1 {
+      font-size: 2.5rem;
+      color: var(--accent);
+      margin-bottom: 0.5rem;
+    }
+    p.subtitle {
+      color: var(--muted);
+      font-size: 1.1rem;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1.5rem;
+      margin-top: 2rem;
+    }
+    .card {
+      background: var(--card);
+      padding: 1.5rem;
+      border-radius: 12px;
+      border: 1px solid #334155;
+      transition: transform 0.2s, border-color 0.2s;
+    }
+    .card:hover {
+      transform: translateY(-4px);
+      border-color: var(--accent);
+    }
+    .card h3 {
+      margin-top: 0;
+      color: var(--accent);
+    }
+    .btn {
+      background: var(--accent);
+      color: #0f172a;
+      border: none;
+      padding: 0.75rem 1.5rem;
+      border-radius: 8px;
+      font-weight: bold;
+      cursor: pointer;
+      margin-top: 1rem;
+      transition: opacity 0.2s;
+    }
+    .btn:hover {
+      opacity: 0.9;
+    }
+    .counter-box {
+      text-align: center;
+      margin-top: 3rem;
+      padding: 2rem;
+      background: var(--card);
+      border-radius: 12px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>Alex Mercer</h1>
+      <p class="subtitle">Full-Stack Engineer & Open Source Contributor</p>
+    </header>
+
+    <main class="grid">
+      <div class="card">
+        <h3>🚀 High Performance</h3>
+        <p>Optimized web applications built for speed, accessibility, and scalability across device platforms.</p>
+      </div>
+      <div class="card">
+        <h3>🎨 Clean UI/UX</h3>
+        <p>Modern design systems implemented with clean CSS, responsive layouts, and interactive components.</p>
+      </div>
+      <div class="card">
+        <h3>⚡ Modern Stack</h3>
+        <p>Leveraging contemporary tools and frameworks to deliver maintainable software architectures.</p>
+      </div>
+    </main>
+
+    <section class="counter-box">
+      <h2>Interactive Live Counter</h2>
+      <p>Demonstrating simple state management in pure vanilla JavaScript.</p>
+      <h3 id="count-display" style="font-size: 2rem; color: var(--accent);">0</h3>
+      <button class="btn" onclick="increment()">Click to Increment</button>
+    </section>
+  </div>
+
+  <script>
+    let count = 0;
+    function increment() {
+      count++;
+      document.getElementById('count-display').innerText = count;
+    }
+  </script>
+</body>
+</html>
